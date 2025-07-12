@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CounterStats | Employee Home</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+
+      #header {
+        background: #e0e0e0;
+        padding: 1rem 2rem;
+      }
+
+      .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-left h1 {
+        margin: 0;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .header-button {
+        background: black;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.8rem;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      #main-menu {
+        padding: 2rem;
+      }
+
+      #main-menu h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .menu-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+      }
+
+      .menu-item {
+        background: #f0f0f0;
+        padding: 1.5rem;
+        border-radius: 1rem;
+        text-align: center;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+      }
+
+      .menu-item:hover {
+        background: #e5e5e5;
+        transform: scale(1.02);
+      }
+
+      .menu-item img {
+        width: 60px;
+        height: auto;
+        margin-bottom: 0.8rem;
+      }
+
+      .menu-item p {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <section id="header">
+      <section class="header-wrapper">
+        <section class="header-left">
+          <h1>Conterstates</h1>
+        </section>
+        <section class="header-right">
+          <a href="employee-login.html" class="header-button">login</a>
+          <a href="#" class="header-button lang-select">🌐 En ▼</a>
+        </section>
+      </section>
+    </section>
+
+    <!-- MAIN MENU -->
+    <section class="menu-grid">
+      <a
+        href="employee-pistols.html"
+        style="text-decoration: none; color: inherit"
+      >
+        <section class="menu-item">
+          <img src="assets/icons/pistol.png" alt="Pistol" />
+          <p>Pistol</p>
+        </section>
+      </a>
+
+      <a
+        href="employee-knives.html"
+        style="text-decoration: none; color: inherit"
+      >
+        <section class="menu-item">
+          <img src="assets/icons/knife.png" alt="Knives" />
+          <p>Knives</p>
+        </section>
+      </a>
+
+      <a
+        href="employee-rifles.html"
+        style="text-decoration: none; color: inherit"
+      >
+        <section class="menu-item">
+          <img src="assets/icons/rifle.png" alt="Rifle" />
+          <p>Rifle</p>
+        </section>
+      </a>
+
+      <a
+        href="employee-gloves.html"
+        style="text-decoration: none; color: inherit"
+      >
+        <section class="menu-item">
+          <img src="assets/icons/gloves.png" alt="Gloves" />
+          <p>Gloves</p>
+        </section>
+      </a>
+
+      <a
+        href="employee-midtier.html"
+        style="text-decoration: none; color: inherit"
+      >
+        <section class="menu-item">
+          <img src="assets/icons/midtier.png" alt="Mid-Tier" />
+          <p>Mid-Tier</p>
+        </section>
+      </a>
+
+      <a href="users.html" style="text-decoration: none; color: inherit">
+        <section class="menu-item">
+          <p style="font-size: 2rem">Users</p>
+        </section>
+      </a>
+    </section>
+  </body>
+</html>

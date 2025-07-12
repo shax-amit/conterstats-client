@@ -1,0 +1,226 @@
+/* ===== בסיס כללי ===== */
+body {
+  font-family: sans-serif;
+  background-color: #f0f0f0;
+  padding: 2rem;
+  margin: 0;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+/* ===== Header ===== */
+#header {
+  background-color: #cccccc;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1rem 2rem;
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 1rem;
+}
+
+.header-left h1 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin: 0;
+  color: black;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: nowrap;
+}
+
+.header-button {
+  background-color: black;
+  color: white;
+  padding: 0.2rem 0.6rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 28px;
+  transition: background-color 0.2s;
+  white-space: nowrap;
+}
+
+.header-button:hover {
+  background-color: #222;
+}
+
+.lang-select {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ===== Wishlist Items ===== */
+#items-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.item-card {
+  background-color: #ffffff;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.item-card button {
+  margin-top: 0.5rem;
+}
+
+/* ===== Login Page ===== */
+#login-form {
+  max-width: 400px;
+  margin: 3rem auto;
+  text-align: left;
+}
+
+#login-form h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+#login-form label {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+#login-form input {
+  width: 100%;
+  padding: 0.7rem;
+  margin-bottom: 1.2rem;
+  border: none;
+  border-radius: 1rem;
+  background-color: #ddd;
+  font-size: 1rem;
+}
+
+.login-submit {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.login-submit:hover {
+  background-color: #0000cc;
+}
+
+.create-account-link {
+  display: block;
+  text-align: center;
+  margin-top: 1rem;
+  color: blue;
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+/* ===== Main Menu (Home Page) ===== */
+#main-menu {
+  max-width: 800px;
+  margin: 3rem auto;
+  text-align: left;
+}
+
+#main-menu h2 {
+  font-size: 1.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+  padding: 2rem;
+}
+
+.menu-item {
+  background-color: #ccc;
+  width: 160px;
+  height: 160px;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.menu-item:hover {
+  background-color: #bbb;
+  transform: scale(1.02);
+}
+
+
+.menu-item img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem;
+}
+
+.menu-item p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #111;
+}
+
+/* תפריט שפות */
+.lang-dropdown {
+  position: absolute;
+  top: 4.2rem;
+  right: 2rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  width: 140px;
+  z-index: 1000;
+}
+
+.lang-dropdown li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.lang-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.hidden {
+  display: none;
+}

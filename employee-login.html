@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CounterStats | Employee Login</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+
+      #header {
+        background-color: #ddd;
+        padding: 1.5rem;
+      }
+
+      .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-left h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .header-button {
+        background: black;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      #login-form {
+        max-width: 600px;
+        margin: 3rem auto;
+        padding: 2rem;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin: 1.5rem 0 0.3rem;
+        font-size: 1.2rem;
+      }
+
+      input {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+        border: none;
+        background: #ddd;
+        font-size: 1.1rem;
+      }
+
+      .submit-btn {
+        margin-top: 2rem;
+        width: 100%;
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        font-size: 1.2rem;
+        padding: 1rem;
+        border: none;
+        border-radius: 1rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="header">
+      <section class="header-wrapper">
+        <section class="header-left">
+          <h1>Conterstates</h1>
+        </section>
+        <section class="header-right">
+          <a href="employee-home.html" class="header-button">Home</a>
+          <a href="employee-login.html" class="header-button">Login</a>
+          <a href="#" class="header-button lang-select">🌐 En ▼</a>
+        </section>
+      </section>
+    </section>
+
+    <section id="login-form">
+      <h2>login:</h2>
+      <form id="employeeLoginForm">
+        <label for="employeeNumber">Employee number:</label>
+        <input
+          type="text"
+          id="employeeNumber"
+          placeholder="enter employee number"
+          required
+        />
+
+        <label for="password">password:</label>
+        <input type="password" id="password" placeholder="password" required />
+
+        <button type="submit" class="submit-btn">submit</button>
+      </form>
+    </section>
+
+    <script>
+      document
+        .getElementById("employeeLoginForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // בקרת הרשאה אמיתית תהיה מול שרת בעתיד.
+          const emp = document.getElementById("employeeNumber").value;
+          const pass = document.getElementById("password").value;
+
+          // במקרה הזה נשלח תמיד לעמוד הבית של עובד:
+          window.location.href = "employee-dashboard.html";
+        });
+    </script>
+  </body>
+</html>

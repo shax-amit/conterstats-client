@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CounterStats | User Details</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+
+      #header {
+        background-color: #ddd;
+        padding: 1.5rem;
+      }
+
+      .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-left h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .header-button {
+        background: black;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      #details-section {
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 0 1rem;
+      }
+
+      h2 {
+        background: white;
+        padding: 1rem;
+        margin-top: 0;
+      }
+
+      .detail-row {
+        display: flex;
+        justify-content: space-between;
+        padding: 1rem;
+        font-weight: bold;
+        background: #f9f9f9;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .detail-row:nth-child(even) {
+        background: #efefef;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section id="header">
+      <section class="header-wrapper">
+        <section class="header-left">
+          <h1>Conterstates</h1>
+        </section>
+        <section class="header-right">
+          <a href="employee-home.html" class="header-button">Home</a>
+          <a href="employee-login.html" class="header-button">Login</a>
+          <a href="#" class="header-button lang-select">🌐 En ▼</a>
+        </section>
+      </section>
+    </section>
+
+    <!-- Main Content -->
+    <section id="details-section">
+      <h2>user details:</h2>
+
+      <section class="detail-row">
+        <span>name:</span>
+        <span>yuval ozeri</span>
+      </section>
+
+      <section class="detail-row">
+        <span>email:</span>
+        <span>yuval@gmail.com</span>
+      </section>
+
+      <section class="detail-row">
+        <span>phone:</span>
+        <span>+972504937245</span>
+      </section>
+
+      <section class="detail-row">
+        <span>state:</span>
+        <span>israel</span>
+      </section>
+
+      <section class="detail-row">
+        <span>date of birth:</span>
+        <span>20/9/1950</span>
+      </section>
+    </section>
+  </body>
+</html>

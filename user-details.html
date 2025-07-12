@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CounterStats | User</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+      }
+
+      #header {
+        background-color: #eee;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-left h1 {
+        margin: 0;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .header-button {
+        background-color: black;
+        color: white;
+        padding: 0.4rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+
+      #user-details {
+        max-width: 900px;
+        margin: 2rem auto;
+        background-color: white;
+        border-radius: 0.5rem;
+        overflow: hidden;
+      }
+
+      .user-header {
+        font-size: 1.6rem;
+        font-weight: bold;
+        padding: 1rem;
+        background-color: #f1f1f1;
+        margin: 0;
+      }
+
+      .user-option {
+        padding: 1.5rem;
+        border-top: 1px solid #ddd;
+        background-color: #fff;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background 0.2s ease;
+      }
+
+      .user-option:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+
+      .user-option:hover {
+        background-color: #ececec;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section id="header">
+      <section class="header-left">
+        <h1>Conterstates</h1>
+      </section>
+      <section class="header-right">
+        <a href="employee-home.html" class="header-button">Home</a>
+        <a href="employee-login.html" class="header-button">Login</a>
+        <a href="#" class="header-button lang-select">🌐 En ▼</a>
+      </section>
+    </section>
+
+    <!-- Main User View -->
+    <section id="user-details">
+      <section class="user-header">yuval:</section>
+
+      <section class="user-option">
+        <a
+          href="user-spesific-details.html"
+          style="text-decoration: none; color: inherit"
+        >
+          user details
+        </a>
+      </section>
+
+      <section class="user-option">
+        <a
+          href="user-wishlist.html"
+          style="text-decoration: none; color: inherit"
+        >
+          user wishlist
+        </a>
+      </section>
+
+      <section class="user-option">
+        <a
+          href="user-history.html"
+          style="text-decoration: none; color: inherit"
+        >
+          user history
+        </a>
+      </section>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CounterStats | User Wishlist</title>
+    <link rel="stylesheet" href="styles/main.css" />
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f1f1f1;
+        margin: 0;
+        padding: 0;
+      }
+
+      #header {
+        background-color: #ddd;
+        padding: 1.5rem;
+      }
+
+      .header-wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .header-left h1 {
+        margin: 0;
+        font-size: 2rem;
+      }
+
+      .header-right {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .header-button {
+        background: black;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      #wishlist-section {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem 1rem;
+      }
+
+      .wishlist-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+      }
+
+      .wishlist-header input {
+        padding: 0.4rem 1rem;
+        border-radius: 0.5rem;
+        border: none;
+        background: #fff;
+        margin-right: 1rem;
+      }
+
+      #sortToggle {
+        cursor: pointer;
+      }
+
+      #sortOptions {
+        background: white;
+        border-radius: 0.5rem;
+        list-style: none;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 0.5rem 0;
+        position: absolute;
+        margin-top: 2.5rem;
+        display: none;
+      }
+
+      #sortOptions li {
+        padding: 0.4rem 1rem;
+        cursor: pointer;
+      }
+
+      #sortOptions li:hover {
+        background-color: #f1f1f1;
+      }
+
+      .wishlist-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        background: #fff;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .wishlist-row:nth-child(even) {
+        background: #f9f9f9;
+      }
+
+      .wishlist-row img {
+        width: 40px;
+      }
+
+      .condition-tag {
+        font-weight: bold;
+        font-family: monospace;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <section id="header">
+      <section class="header-wrapper">
+        <section class="header-left">
+          <h1>Conterstates</h1>
+        </section>
+        <section class="header-right">
+          <a href="employee-home.html" class="header-button">Home</a>
+          <a href="employee-login.html" class="header-button">Login</a>
+          <a href="#" class="header-button lang-select">🌐 En ▼</a>
+        </section>
+      </section>
+    </section>
+
+    <!-- Wishlist -->
+    <section id="wishlist-section">
+      <section class="wishlist-header" style="position: relative">
+        <h2>yuval wishlist:</h2>
+        <section style="display: flex; gap: 1rem">
+          <input type="text" id="searchInput" placeholder="🔍 Search" />
+          <section id="sortToggle">Sort by ▼</section>
+          <ul id="sortOptions">
+            <li data-sort="name">Name</li>
+            <li data-sort="price">Price</li>
+            <li data-sort="condition">Condition</li>
+          </ul>
+        </section>
+      </section>
+
+      <section id="wishlistItems">
+        <section
+          class="wishlist-row"
+          data-name="Pistol #7"
+          data-price="4.2"
+          data-condition="MW"
+        >
+          <span>Pistol #7</span>
+          <img src="assets/icons/pistol.png" alt="Pistol" />
+          <span>4.2$</span>
+          <span>added to wishlist</span>
+          <span class="condition-tag">MW</span>
+        </section>
+
+        <section
+          class="wishlist-row"
+          data-name="Rifle #6"
+          data-price="16.6"
+          data-condition="FT"
+        >
+          <span>Rifle #6</span>
+          <img src="assets/icons/rifle.png" alt="Rifle" />
+          <span>16.6$</span>
+          <span>added to wishlist</span>
+          <span class="condition-tag">FT</span>
+        </section>
+
+        <section
+          class="wishlist-row"
+          data-name="Knife #3"
+          data-price="5.5"
+          data-condition="FN"
+        >
+          <span>Knife #3</span>
+          <img src="assets/icons/knife.png" alt="Knife" />
+          <span>5.5$</span>
+          <span>added to wishlist</span>
+          <span class="condition-tag">FN</span>
+        </section>
+      </section>
+    </section>
+
+    <!-- Script -->
+    <script>
+      const sortToggle = document.getElementById("sortToggle");
+      const sortOptions = document.getElementById("sortOptions");
+      const itemList = document.getElementById("wishlistItems");
+      const searchInput = document.getElementById("searchInput");
+
+      sortToggle.addEventListener("click", () => {
+        sortOptions.style.display =
+          sortOptions.style.display === "block" ? "none" : "block";
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!sortToggle.contains(e.target) && !sortOptions.contains(e.target)) {
+          sortOptions.style.display = "none";
+        }
+      });
+
+      sortOptions.querySelectorAll("li").forEach((option) => {
+        option.addEventListener("click", () => {
+          const sortBy = option.getAttribute("data-sort");
+          sortItems(sortBy);
+          sortOptions.style.display = "none";
+        });
+      });
+
+      function sortItems(criterion) {
+        const items = Array.from(document.querySelectorAll(".wishlist-row"));
+
+        items.sort((a, b) => {
+          let aVal = a.dataset[criterion];
+          let bVal = b.dataset[criterion];
+
+          if (criterion === "price") {
+            return parseFloat(aVal) - parseFloat(bVal);
+          } else {
+            return aVal.localeCompare(bVal);
+          }
+        });
+
+        items.forEach((item) => itemList.appendChild(item));
+      }
+
+      searchInput.addEventListener("keypress", (e) => {
+        if (e.key === "Enter") {
+          const query = e.target.value.trim().toLowerCase();
+          const allItems = document.querySelectorAll(".wishlist-row");
+
+          allItems.forEach((item) => {
+            const name = item.dataset.name.toLowerCase();
+            item.style.display = name.includes(query) ? "flex" : "none";
+          });
+        }
+      });
+    </script>
+  </body>
+</html>
